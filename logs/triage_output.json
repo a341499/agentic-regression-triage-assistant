@@ -1,0 +1,62 @@
+[
+    {
+        "test": "partition_split_validation",
+        "error": "ORA-14098 block mismatch during partition split",
+        "component": "Partitioning",
+        "severity": "HIGH",
+        "likely_root_cause": "Partition Metadata / Storage Layer",
+        "recommended_actions": [
+            "Check partition metadata consistency.",
+            "Validate split/merge DDL execution path.",
+            "Compare storage-level block mapping before and after operation."
+        ]
+    },
+    {
+        "test": "vector_index_rebuild",
+        "error": "HNSW index inconsistency detected",
+        "component": "Vector Indexing",
+        "severity": "CRITICAL",
+        "likely_root_cause": "Vector Index / Embedding Layer",
+        "recommended_actions": [
+            "Validate vector index rebuild path.",
+            "Check HNSW index consistency after DML or rebuild.",
+            "Compare query results before and after vector index usage."
+        ]
+    },
+    {
+        "test": "optimizer_plan_regression",
+        "error": "execution plan changed after stats refresh",
+        "component": "SQL Optimizer",
+        "severity": "MEDIUM",
+        "likely_root_cause": "SQL Optimizer / Statistics",
+        "recommended_actions": [
+            "Compare execution plans before and after stats refresh.",
+            "Check optimizer statistics, histograms, and plan baselines.",
+            "Validate whether plan change caused performance or correctness impact."
+        ]
+    },
+    {
+        "test": "standby_failover_validation",
+        "error": "redo apply lag exceeded threshold",
+        "component": "Data Guard",
+        "severity": "HIGH",
+        "likely_root_cause": "Replication / Recovery Layer",
+        "recommended_actions": [
+            "Check redo apply lag and archive log availability.",
+            "Validate standby synchronization state.",
+            "Review failover/switchover timing and recovery logs."
+        ]
+    },
+    {
+        "test": "ddl_concurrency_test",
+        "error": "deadlock detected during concurrent DDL",
+        "component": "Concurrency",
+        "severity": "HIGH",
+        "likely_root_cause": "Concurrency / Transaction Layer",
+        "recommended_actions": [
+            "Review lock graph and wait events.",
+            "Check concurrent DDL/DML interaction.",
+            "Validate transaction ordering and deadlock trace."
+        ]
+    }
+]

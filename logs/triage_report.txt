@@ -1,0 +1,62 @@
+AGENTIC REGRESSION TRIAGE REPORT
+================================================================================
+
+Failure #1
+Test        : partition_split_validation
+Error       : ORA-14098 block mismatch during partition split
+Component   : Partitioning
+Severity    : HIGH
+Likely Area : Partition Metadata / Storage Layer
+Recommended Actions:
+- Check partition metadata consistency.
+- Validate split/merge DDL execution path.
+- Compare storage-level block mapping before and after operation.
+--------------------------------------------------------------------------------
+
+Failure #2
+Test        : vector_index_rebuild
+Error       : HNSW index inconsistency detected
+Component   : Vector Indexing
+Severity    : CRITICAL
+Likely Area : Vector Index / Embedding Layer
+Recommended Actions:
+- Validate vector index rebuild path.
+- Check HNSW index consistency after DML or rebuild.
+- Compare query results before and after vector index usage.
+--------------------------------------------------------------------------------
+
+Failure #3
+Test        : optimizer_plan_regression
+Error       : execution plan changed after stats refresh
+Component   : SQL Optimizer
+Severity    : MEDIUM
+Likely Area : SQL Optimizer / Statistics
+Recommended Actions:
+- Compare execution plans before and after stats refresh.
+- Check optimizer statistics, histograms, and plan baselines.
+- Validate whether plan change caused performance or correctness impact.
+--------------------------------------------------------------------------------
+
+Failure #4
+Test        : standby_failover_validation
+Error       : redo apply lag exceeded threshold
+Component   : Data Guard
+Severity    : HIGH
+Likely Area : Replication / Recovery Layer
+Recommended Actions:
+- Check redo apply lag and archive log availability.
+- Validate standby synchronization state.
+- Review failover/switchover timing and recovery logs.
+--------------------------------------------------------------------------------
+
+Failure #5
+Test        : ddl_concurrency_test
+Error       : deadlock detected during concurrent DDL
+Component   : Concurrency
+Severity    : HIGH
+Likely Area : Concurrency / Transaction Layer
+Recommended Actions:
+- Review lock graph and wait events.
+- Check concurrent DDL/DML interaction.
+- Validate transaction ordering and deadlock trace.
+--------------------------------------------------------------------------------

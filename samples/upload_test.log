@@ -1,0 +1,4 @@
+TEST: vector_rebuild_operation
+ERROR: HNSW index inconsistency detected after rebuild
+COMPONENT: Vector Indexing
+SEVERITY: CRITICAL
