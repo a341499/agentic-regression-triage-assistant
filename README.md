@@ -1,44 +1,50 @@
-# agentic-regression-triage-assistant
+# Agentic Regression Triage Assistant
+
 AI-assisted regression triage platform with semantic retrieval, vector similarity search, and Ollama-powered reasoning workflows.
 
+## Architecture Diagram
 
-## Features
+![Agentic Regression Triage Architecture](architecture/agentic_regression_triage_architecture.png)
 
-- Semantic failure retrieval
-- Vector similarity search
-- AI-assisted regression triage
-- Ollama-powered reasoning workflows
-- ChromaDB vector storage
-- Upload-based log analysis
-- JSON and report generation
-- Streamlit-based UI
+## Problem
 
-## Technology Stack
+Regression debugging and failure triage often require engineers to manually analyze logs, compare historical failures, search incident databases, and correlate repeated issues across large validation environments. This process is time-consuming and difficult to scale.
+
+## Solution
+
+This project builds an AI-assisted regression triage workflow that ingests historical regression failures, generates embeddings, performs semantic retrieval, and uses local LLM reasoning to recommend likely root causes and similar historical incidents.
+
+## Architecture
+
+Logs → Parsing → Embeddings → Vector Store → Semantic Retrieval → AI Reasoning → Triage Recommendation
+
+## Key Features
+
+- Regression log ingestion
+- Semantic similarity search
+- Historical incident retrieval
+- Vector embedding generation
+- AI-assisted reasoning workflows
+- Local LLM integration using Ollama
+- Streamlit-based interactive interface
+
+## Tech Stack
 
 - Python
-- Ollama
-- ChromaDB
 - Streamlit
-- Vector Embeddings
-- Semantic Search
+- ChromaDB
+- Sentence Transformers
+- Ollama
+- Vector Similarity Search
 - Local LLM Workflows
 
-## Project Workflow
+## Portfolio Relevance
 
-1. Upload regression failure logs
-2. Parse and structure failures
-3. Generate embeddings
-4. Store vectors in ChromaDB
-5. Perform semantic similarity search
-6. Run AI-assisted triage reasoning
-7. Generate JSON + text reports
-8. Display results in Streamlit UI
+This project demonstrates practical AI systems engineering skills:
 
-## Use Cases
-
-- Database regression triage
-- SQL execution failure analysis
-- Semantic log retrieval
 - AI-assisted debugging workflows
-- Enterprise validation environments
-- Historical failure pattern analysis
+- Semantic incident retrieval
+- Vector database implementation
+- Agentic reasoning concepts
+- Regression triage automation
+- AI infrastructure engineering
